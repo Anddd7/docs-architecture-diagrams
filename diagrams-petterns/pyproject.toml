@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "diagrams-petterns"
+version = "0.1.0"
+description = ""
+authors = ["Anddd7 <anddd7@icloud.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+diagrams = "^0.23.4"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
