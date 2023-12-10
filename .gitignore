@@ -1,1 +1,5 @@
+# for temporary files
 _local/
+
+# for generated files
+_out/
