@@ -69,7 +69,6 @@ How to draw
 - **Terminal**
   - > terminal friendly, in case you need to draw in terminal
   - [asciiflow](https://github.com/lewish/asciiflow)
-  - 
 
 ### Visualizations ()
 
