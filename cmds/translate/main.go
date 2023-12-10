@@ -28,8 +28,6 @@ func main() {
 	// scan the files or use specific one
 	filepaths := getFilepaths()
 
-	fmt.Printf("files to translate: %v\n", filepaths)
-
 	// convert to Diagram
 	diagrams := []Diagram{}
 	for _, path := range filepaths {
@@ -58,11 +56,14 @@ func main() {
 func getFilepaths() []string {
 	files := []string{}
 	filepath.Walk(_filepath, func(path string, info os.FileInfo, err error) error {
-		if path == "." || info.Name()[0] == '.' || info.Name()[0] == '_' {
-			fmt.Println("Skip dir/file:", path)
+		if path == "." || info.Name()[0] == '.' || info.Name()[0] == '_' ||
+			strings.Contains(path, "_i18n") {
+			// fmt.Println("Skip dir/file:", path)
 			return nil
 		}
+
 		files = append(files, path)
+
 		return nil
 	})
 	return files
@@ -77,6 +78,12 @@ type Excalidraw struct {
 }
 
 func (t Excalidraw) translate() {
+	targetPath := filepath.Join(filepath.Dir(t.path), "_i18n", _language, filepath.Base(t.path))
+	if _, err := os.Stat(targetPath); !os.IsNotExist(err) {
+		// fmt.Printf("File exists, skip: %s\n", targetPath)
+		return
+	}
+
 	file, _ := os.Open(t.path)
 	defer file.Close()
 
@@ -85,12 +92,6 @@ func (t Excalidraw) translate() {
 
 	// translate the elements[*].text, and elements[*].originalText
 	body["elements"] = t.translateElements(body["elements"].([]interface{}))
-
-	targetPath := filepath.Join(filepath.Dir(t.path), "_i18n", _language, filepath.Base(t.path))
-
-	if !confirmOverwrite(targetPath) {
-		return
-	}
 
 	// create folder if not exists
 	if _, err := os.Stat(filepath.Dir(targetPath)); os.IsNotExist(err) {
