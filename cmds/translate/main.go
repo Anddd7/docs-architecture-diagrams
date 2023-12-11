@@ -13,7 +13,7 @@ import (
 
 var _filepath string
 var _language string
-var cache = make(map[string]string)
+var cache = sync.Map{}
 
 func main() {
 	// get the args
@@ -126,8 +126,8 @@ func (t Excalidraw) translateText(text string) string {
 		return text
 	}
 
-	if result, ok := cache[text]; ok {
-		return result
+	if result, ok := cache.Load(text); ok {
+		return result.(string)
 	}
 
 	from, to := "zh", "en"
@@ -136,21 +136,7 @@ func (t Excalidraw) translateText(text string) string {
 	}
 
 	result, _ := gt.Translate(text, from, to)
-	cache[text] = result
+	cache.Store(text, result)
 
 	return result
-}
-
-func confirmOverwrite(path string) bool {
-	if _, err := os.Stat(path); !os.IsNotExist(err) {
-		fmt.Println("File exists:", path)
-		fmt.Print("Overwrite? (y/n): ")
-		var response string
-		fmt.Scanln(&response)
-		if response != "y" {
-			fmt.Println("Skip file:", path)
-			return false
-		}
-	}
-	return true
 }
