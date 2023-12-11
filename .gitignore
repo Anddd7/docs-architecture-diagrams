@@ -3,3 +3,4 @@ _local/
 
 # for generated files
 _out/
+bin/
