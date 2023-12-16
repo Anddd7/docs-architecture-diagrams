@@ -36,8 +36,9 @@ How to draw
 
 - **Topology**
   - > Describe the relationship between components, e.g. network, system or interpersonal relationship
+  - d2 *(with simpler DSL)*
   - Diagrams
-  - plantuml
+  - ~~plantuml~~
 
 - **Mindmap**
   - > Visualize your thoughts
@@ -51,25 +52,33 @@ How to draw
 
 - **Flow/Sequence/State**
   - > Describe the process or sequence of events
+  - d2 *(with simpler DSL)*
   - mermaid
-  - plantuml  
+  - ~~plantuml~~  
 
-- **Object Oriented**
+- **Object Oriented, SQL**
   - > Class, Object, Interface, or Entity-Releationship
+  - d2 *(with simpler DSL)*
   - mermaid
-  - plantuml
+  - ~~plantuml~~
+
+- **Architecture Cake**
+  - > Describe the layers of architecture
+  - d2 *([with grid diagrams](https://d2lang.com/tour/grid-diagrams))*
+  - Diagrams
 
 - **C4 Model**
   - > C4 Model is a simple hierarchical way to think about the static structures of a software system in terms of containers, components and code.
-  - mermaid & plantuml (same syntax)
-  - Structurizr
-    - [krzysztofreczek/go-structurizr](https://github.com/krzysztofreczek/go-structurizr)
-    - [goadesign/model](https://github.com/goadesign/model)
+  - mermaid
+  - d2 *(not standard, but easy to use)*
+  - ~~Structurizr~~
+    - ~~[krzysztofreczek/go-structurizr](https://github.com/krzysztofreczek/go-structurizr)~~
+    - ~~[goadesign/model](https://github.com/goadesign/model)~~
 
 - **Terminal**
   - > terminal friendly, in case you need to draw in terminal
   - [asciiflow](https://github.com/lewish/asciiflow)
 
-### Visualizations ()
+### Visualizations
 
-- Graphviz
+- Graphviz: the base of many tools
