@@ -38,7 +38,7 @@ How to draw
 
 - **Topology**
   - > Describe the relationship between components, e.g. network, system or interpersonal relationship
-  - d2 *(with simpler DSL)*
+  - d2 _(with simpler DSL)_
   - Diagrams
   - ~~plantuml~~
 
@@ -54,25 +54,25 @@ How to draw
 
 - **Flow/Sequence/State**
   - > Describe the process or sequence of events
-  - d2 *(with simpler DSL)*
+  - d2 _(with simpler DSL)_
   - mermaid
   - ~~plantuml~~  
 
 - **Object Oriented, SQL**
   - > Class, Object, Interface, or Entity-Releationship
-  - d2 *(with simpler DSL)*
+  - d2 _(with simpler DSL)_
   - mermaid
   - ~~plantuml~~
 
 - **Architecture Cake**
   - > Describe the layers of architecture
-  - d2 *([with grid diagrams](https://d2lang.com/tour/grid-diagrams))*
+  - d2 _([with grid diagrams](https://d2lang.com/tour/grid-diagrams))_
   - Diagrams
 
 - **C4 Model**
   - > C4 Model is a simple hierarchical way to think about the static structures of a software system in terms of containers, components and code.
   - mermaid
-  - d2 *(not standard, but easy to use)*
+  - d2 _(not standard, but easy to use)_
   - ~~Structurizr~~
     - ~~[krzysztofreczek/go-structurizr](https://github.com/krzysztofreczek/go-structurizr)~~
     - ~~[goadesign/model](https://github.com/goadesign/model)~~
