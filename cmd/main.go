@@ -12,7 +12,7 @@ type Globals struct {
 type CLI struct {
 	Globals
 
-	Translate TranslateCmd `cmd help:"Translate the excalidraw files."`
+	Translate TranslateCmd `cmd:"" help:"Translate the excalidraw files."`
 }
 
 func main() {
